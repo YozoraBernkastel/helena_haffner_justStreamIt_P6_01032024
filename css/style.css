@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* General Rules */
+html{
+        font-family : "Oswald";
+        text-align: center;
+}
+
+header, body{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+section {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+}
+
+h1, h2, h3{
+        text-align: left;
+}
+
+h2, h3{
+        font-size: 48px;
+        font-weight: 600;
+}
+
+li{
+	list-style: none;
+}
+
+p{
+        padding: 0;
+        margin: 0;
+}
+
+footer{
+        height: 70px;
+}
+
+/* Specific Rules */
+/* header */
+header{
+        width: 60%;
+        height: 122px;
+        background-color: #61787F;
+        border: solid 1px #000;
+        margin-top: 50px;
+        display: flex;
+
+}
+
+header span{
+        width: 25%;
+}
+
+header img{
+        width: 127px;        
+        margin-top: 15px;
+}
+
+
+h1{
+        color: #fff;
+        font-size: 40px;
+        line-height: 60px;
+        font-weight: 300;
+        margin-bottom: 35px;
+        width: 55%;      
+}
+
+/* Main */
+/* best movie section */
+#bestMovieArticle{
+        min-height: 369px;
+        border: solid 6px #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 5px;
+        padding-bottom: 15px;
+}
+
+#bestMovieArticle span {
+        width: 25%;
+}
+
+#bestMovieArticle img{
+        height: 334px; 
+        margin-top: auto;
+        margin-bottom: auto;
+        box-sizing: content-box;
+}
+
+#bestMoviePitch{
+        width: 70%;
+        margin-left: 10px;
+        font-size: 28px;
+}
+
+
+.movieDetailButton{
+        color: #fff;
+        width: 158px;
+        height: 64px;
+        font-size: 24;
+        font-weight: 500;
+        background-color: #FA0B0B;
+        border-radius: 25px;
+        padding-top: 25px;
+        margin-left: auto;
+}
+
+/* Fixed Categories section */
+/* #fixedCategory{ */
+
+/* } */
+
+.categoryContentBox{      
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 700px;       
+}
+
+.categoryContentBox figure{
+        width: 30%;
+        height: 350px;
+        background-size: cover;
+	background-position: center;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 20px ;
+}

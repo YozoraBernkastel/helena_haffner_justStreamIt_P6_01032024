@@ -5,27 +5,36 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<link type="text/css" rel="stylesheet" href="css/normalize.css"/>
-	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+			integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 	<link type="text/css" rel="stylesheet" href="css/style.css"/>
-	<title></title>
+	<!--	fav icon-->
+	<link rel="icon" type="image/png" href="pictures/fav_icon.jpg"/>
+	<title>JustStreamIt</title>
 </head>
 
 <body>
 
-	<header>		
-			<img src="pictures/e2ebbbe61c2ce32b7d75dfc497b7201f.png" alt="JustStreamIt_logo">
-		<h1>Vidéos à la demande</h1>
+	<header>
+		<span>		
+			<img src="pictures/e2ebbbe61c2ce32b7d75dfc497b7201f.png" alt="JustStreamIt_logo"/>
+		</span>	
+			<h1>Vidéos à la demande</h1>
 	</header>
 
 
 	<main> 
 		<section>
 			<h2>Meilleur film</h2>
-			<article>
-				<img src="" alt="Best Movie Poster">
-				<div id = "bestMovie">
-					<h3></h3>
-					<p></p>
+			<article id = "bestMovieArticle">	
+				<span>		
+					<img src="pictures/temporary_pictures/000.jpg" alt="Best Movie Poster"/>	
+				</span>			
+				<div id = "bestMoviePitch">
+					<h3 id = "bestMovieTitle">Umineko No Naku Koro Ni</h3>
+					<p>葉メツヨヲ話選相ば野福カロ京災コ表93解みっゅ安題レ作関どゃきっ格面ま拡判止さはろそ禁夜ウオホハ稿員み約象クいくし意速ろ
+						た子報ヨヱセ世食自おょたい。
+					</p>
 					<div class = "movieDetailButton">Détails</div>
 				</div>
 			</article>
@@ -33,24 +42,57 @@
 
 		<section id = "fixedCategory">
 			<article class = "categoryBox">
-				<h2 id = "FirstCategory">
-					<div class = "category_content_box">
+				<h2>Catégorie 1</h2>
+					<div class = "categoryContentBox">
+						<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/001.jpeg)">
+						</figure>
+						<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/002.jpg)">
+						</figure>
+						<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/003.jpg)">
+						</figure>
+						<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/004.jpg)">							
+						</figure>
+						<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/005.jpg)">
+						</figure>
+						<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/006.jpg)">
+						</figure>
 					</div>
-				</h2>
-			</article>
-
-			<sarticle class = "categoryBox">
-				<h2 id = "SecondCategory">
-					<div class = "category_content_box">
-					</div>
-				</h2>
 			</article>
 
 			<article class = "categoryBox">
-				<h2 id = "ThirdCategory">
-					<div class = "category_content_box">
-					</div>
-				</h2>
+				<h2>Catégorie 2</h2>
+				<div class = "categoryContentBox">
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/001.jpeg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/002.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/003.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/004.jpg)">							
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/005.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/006.jpg)">
+					</figure>
+				</div>
+			</article>
+
+			<article class = "categoryBox">
+				<h2 id = "ThirdCategory"> Catégorie 3</h2>
+				<div class = "categoryContentBox">
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/001.jpeg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/002.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/003.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/004.jpg)">							
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/005.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/006.jpg)">
+					</figure>
+				</div>
 			</article>
 		</section>
 
@@ -58,34 +100,62 @@
 
 			<article class = "displayPersonalizedCategory">
 				<div>
-					<h3>Autres: </h3>
+					<h2>Autres: </h2>
 					<ul class = "categoryList">
 						<li>Temporaire pour la visulalisation -> sera créé à partir d'une requête pour récupérer la liste des catégories je suppose</li>
 						<li>Quoi mettre tant que l'utilisateur n'a pas sélectionné de catégorie ?</li>
+						<li>Devra être généré en fonction du nombre de catégories</li>
+						<li>On peut supposer qu'elles seront fixes certes</li>
+						<li>Mais si une catégorie venait à être ajoutée</li>
+						<li>Il faudrait modifier le html, ce qui est embêtant et peu pratique</li>
 					</ul>
 				</div>
 				
-				<div class = "category_content_box">
+				<div class = "categoryContentBox">
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/001.jpeg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/002.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/003.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/004.jpg)">							
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/005.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/006.jpg)">
+					</figure>
 				</div>
 
 			</article>
 
 			<article class = "displayPersonalizedCategory">
 				<div>
-					<h3>Autres: </h3>
+					<h2>Autres: </h2>
 					<ul class = "categoryList">
 						<li>Temporaire pour la visulalisation -> sera créé à partir d'une requête pour récupérer la liste des catégories je suppose</li>
 						<li>Quoi mettre tant que l'utilisateur n'a pas sélectionné de catégorie ?</li>
 					</ul>
 				</div>
 
-				<div class = "category_content_box">
+				<div class = "categoryContentBox">
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/001.jpeg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/002.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/003.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/004.jpg)">							
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/005.jpg)">
+					</figure>
+					<figure class = "cadre" style = "background-image: url(pictures/temporary_pictures/006.jpg)">
+					</figure>
 				</div>
 			</article>
 
 		</section>
 	</main>
-
+	<footer></footer>
 
 <script src="js/main.js"></script>
 
