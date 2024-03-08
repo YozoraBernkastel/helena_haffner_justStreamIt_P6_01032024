@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* General Rules */
+html{
+        font-family : "Oswald";
+        text-align: center;
+        padding: 0;
+        margin: 0;
+}
+
+header, body{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+section {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+}
+
+h1, h2, h3{
+        text-align: left;
+}
+
+h2, h3{
+        font-size: 48px;
+        font-weight: 600;
+        padding: 0;
+        margin-bottom: 30px;
+}
+article{
+        margin-top: 20px;
+}
+
+ul, li, p{
+        padding: 0;
+        margin: 0;
+}
+
+li{
+	list-style: none;
+}
+
+footer{
+        height: 70px;
+}
+
+/* Specific Rules */
+/* header */
+header{
+        width: 60%;
+        height: 122px;
+        background-color: #61787F;
+        border: solid 1px #000;
+        margin-top: 50px;
+        display: flex;
+
+}
+
+header span{
+        width: 25%;
+}
+
+header img{
+        width: 127px;        
+        margin-top: 15px;
+}
+
+
+h1{
+        color: #fff;
+        font-size: 40px;
+        line-height: 60px;
+        font-weight: 300;
+        margin-bottom: 35px;
+        width: 55%;      
+}
+
+/* Main */
+/* best movie section */
+#bestMovieArticle{
+        min-height: 369px;
+        border: solid 6px #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 5px;
+        padding-bottom: 15px;
+}
+
+#bestMovieArticle span {
+        width: 25%;
+}
+
+#bestMovieArticle img{
+        height: 334px; 
+        margin-top: auto;
+        margin-bottom: auto;
+        box-sizing: content-box;
+}
+
+#bestMoviePitch{
+        width: 70%;
+        margin-left: 10px;
+        font-size: 28px;
+}
+
+
+.bestMovieDetailButton{
+        color: #fff;
+        width: 158px;
+        height: 64px;
+        font-size: 24;
+        font-weight: 500;
+        background-color: #FA0B0B;
+        border-radius: 25px;
+        padding-top: 25px;
+        margin-left: auto;
+}
+
+/* Fixed Categories section */
+.categoryContentBox{      
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 700px;       
+}
+
+.categoryContentBox figure{
+        width: 32%;
+        height: 350px;
+        background-size: cover;
+	background-position: center;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 20px ;
+}
+
+figure>div{
+        height: 100px;
+        margin-top: 80px;;
+        background-color: #000;
+        opacity: 0.5;
+        color: #fff;
+        padding-top: 8px;
+}
+
+figure>div:hover{
+        opacity: 0.8;;
+}
+
+figure>div>div{
+        opacity: 1;
+}
+
+/* personalized categories */
+.otherCategoryTitleBox{
+        width: 100%;
+        display: flex;
+        justify-content: baseline;
+        margin-bottom: 10px;
+}
+
+.categoryList{
+        padding-top: 42px;
+        width: 70%;
+        font-size: 36px;
+        margin-left: 20px;
+}
+
+.categoryList li{
+        display: none;
+        text-align: left;
+        padding-left: 20px;
+}
+
+.categoryList li:first-child{
+        display: block;
+        border: solid 2px #000;
+        width: 80%;
+        height: 60px;
+        padding-top: 5px;
+        
+}
+
+.triangle{
+        margin-left: 80px;
+}
+
+
