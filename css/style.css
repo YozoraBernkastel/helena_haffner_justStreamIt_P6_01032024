@@ -34,7 +34,7 @@ article{
         margin-top: 20px;
 }
 
-ul, li, p{
+h4, ul, li, p{
         padding: 0;
         margin: 0;
 }
@@ -60,7 +60,7 @@ header{
 }
 
 header span{
-        width: 25%;
+        width: 30%;
 }
 
 header img{
@@ -71,15 +71,20 @@ header img{
 
 h1{
         color: #fff;
-        font-size: 40px;
+        font-size: 60px;
         line-height: 60px;
         font-weight: 300;
-        margin-bottom: 35px;
+        margin-top: 25px;
+        margin-bottom: 40px;
         width: 55%;      
 }
 
 /* Main */
 /* best movie section */
+#detailWindow{
+        display: none;
+}
+
 #bestMovieArticle{
         min-height: 369px;
         border: solid 6px #000;
@@ -90,15 +95,14 @@ h1{
         padding-bottom: 15px;
 }
 
-#bestMovieArticle span {
-        width: 25%;
-}
-
-#bestMovieArticle img{
-        height: 334px; 
+#bestMoviePicture{
+        width: 25%; 
+        height: 369px;
         margin-top: auto;
         margin-bottom: auto;
         box-sizing: content-box;
+        background-size: cover;
+	background-position: center;
 }
 
 #bestMoviePitch{
@@ -118,6 +122,7 @@ h1{
         border-radius: 25px;
         padding-top: 25px;
         margin-left: auto;
+        margin-right: 10px;
 }
 
 /* Fixed Categories section */
@@ -128,7 +133,7 @@ h1{
         height: 700px;       
 }
 
-.categoryContentBox figure{
+.cadre{
         width: 32%;
         height: 350px;
         background-size: cover;
@@ -138,21 +143,41 @@ h1{
         margin-bottom: 20px ;
 }
 
-figure>div{
+.cadre>div{
         height: 100px;
         margin-top: 80px;;
-        background-color: #000;
-        opacity: 0.5;
+        background-color: rgba(0, 0, 0, 0.4);
         color: #fff;
-        padding-top: 8px;
+        padding-top: 50px;
+        padding-bottom: 5px;
 }
 
-figure>div:hover{
-        opacity: 0.8;;
+h4{
+        font-size: 20px;
+        text-align: left;
+        padding-left: 30px;
 }
 
-figure>div>div{
+
+.movieDetailButton{
         opacity: 1;
+        width: 80px;
+        height: 30px;
+        background-color: #000;
+        border-radius: 25px;
+        margin-left: auto;
+        margin-right: 15px;
+        padding-top: 10px;
+        margin-top: 25px;
+}
+
+.movieDetailButton:hover{
+        transform: scale(1.1);
+	transition-duration: 0.5s;
+}
+
+.seeMoreButton{
+        display: none;
 }
 
 /* personalized categories */
@@ -174,15 +199,14 @@ figure>div>div{
         display: none;
         text-align: left;
         padding-left: 20px;
+        padding-top: 5px;
 }
 
-.categoryList li:first-child{
+.categoryList>.otherCategoryShow{
         display: block;
         border: solid 2px #000;
         width: 80%;
-        height: 60px;
-        padding-top: 5px;
-        
+        height: 60px;        
 }
 
 .triangle{
@@ -190,3 +214,136 @@ figure>div>div{
 }
 
 
+/*tablette*/
+@media screen and (max-width: 992px){
+
+        header, section{
+                width: 100%;
+        }
+
+        #bestMoviePicture{
+                width: 32%;
+                margin: 0;
+        }
+
+        #bestMoviePitch{
+                width: 63%;
+        }
+
+        h2, h3{
+                font-size: 2rem;
+        }
+
+        .bestMovieDetailButton{
+                width: 120px;
+                height: 35px;
+                font-size: 20px;
+                padding-top: 10px; 
+        }
+
+        .seeMoreButton{
+                display: inline-block;
+        }
+
+        .categoryContentBox{
+                justify-content: space-around;
+                margin-bottom: 50px;
+        }
+
+        .cadre{
+                width: 47%;
+        }
+
+        .cadre:nth-child(n + 5){
+                display: none;
+        }
+
+        .seeMoreButton{
+                background-color: orangered;
+                color: #fff;
+                width: 150px;
+                height: 30px;
+                border-radius: 25px;
+                padding-top: 10px;
+        }
+
+        ul{
+                margin-top: 10px;
+        }
+
+        .categoryList{
+                font-size: 1.5rem;
+                padding-top: 10px;
+        }
+
+        .triangle{
+                width: 20px;
+        }
+
+        .categoryList li{
+                padding-top: 10px;
+        }
+
+        .categoryList>.otherCategoryShow{
+               height: 40px;
+        }
+}
+
+/*téléphone portable*/
+@media screen and (max-width: 768px){ 
+        header{
+                display: block;
+        }
+        h1{
+                display: none;
+        }     
+
+        h2, h3{
+             text-align: center;   
+        }
+
+        #bestMovieArticle{
+                display:block;
+        }
+
+        #bestMoviePicture{
+                min-width: 90%;
+                min-height: 300px;
+                margin-top: 10px;
+                margin-left: auto;
+                margin-right: auto;
+        }
+
+        #bestMoviePitch{
+                width: 95%;
+        }
+
+        #bestMoviePitch p{
+                margin-bottom: 15px;
+        }
+
+        .bestMovieDetailButton{
+                margin-right: auto;
+        }
+
+        .cadre{
+                width: 90%;
+        }
+
+        .cadre:nth-child(n + 3){
+                display: none;
+        }
+
+        .displayPersonalizedCategory h2{
+                display: none;
+        }
+
+        .categoryList{
+                width: 100%;
+        }
+
+        .categoryList>.otherCategoryShow{
+                width: 90%;
+        }
+
+}
