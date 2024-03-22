@@ -50,7 +50,7 @@ function genreCategoryCall(genre, categoryBox)
         const h2Element = categoryBox.querySelector("h2");
         // Upper case on the first letter of the genre in entry
         h2Element.innerText = genre.charAt(0).toUpperCase() + genre.slice(1);
-        unzipFigure(categoryBox, json.results)
+        unzipFigure(categoryBox, json.results);
     });
 };
 
@@ -64,7 +64,7 @@ function otherCategoryCall(genre, personalizedCategory)
     });
 };
 
-function allGenresListCall(personalizedCategory)
+function allGenresListCall(personalizedCategory, element)
 {
     fetch(genresCategoryUrl).then((response) => {
         return response.json();
@@ -85,9 +85,17 @@ function allGenresListCall(personalizedCategory)
             };
 
             otherCategoryCall(json.results[count].name, personalizedCategory); 
-            categoriesBox.value = json.results[count].name.charAt(0).toLowerCase() + json.results[count].name.slice(1);
-            count += 1;
+            selectedElement = json.results[count].name.charAt(0).toLowerCase() + json.results[count].name.slice(1)
+            categoriesBox.value = selectedElement;
 
+            if(element == "forth"){
+                forthActiveGenre = selectedElement;
+            }
+            if(element == "fifth"){
+                fifthActiveGenre = selectedElement;
+            }
+
+            count += 1;
             if(count == 2){
                 count = 0;
             }       
@@ -101,10 +109,21 @@ function changeCategory(event){
     const parent = this.parentElement.parentElement; 
     attribute = parseInt(this.getAttribute("data-id"));
     this.setAttribute("data-id", attribute +1);
-    console.log(this.value)
 
-    if(parseInt(this.getAttribute("data-id") % 2) == 0)
+    // if(parseInt(this.getAttribute("data-id") % 2) == 0)
+    // {
+    //     otherCategoryCall(this.value, parent);
+    // } 
+
+    if(parent == forthCategory && forthActiveGenre != this.value)
     {
+        forthActiveGenre != this.value
+        otherCategoryCall(this.value, parent);
+    }
+
+    if(parent == fifthCategory && fifthActiveGenre != this.value)
+    {
+        fifthActiveGenre != this.value
         otherCategoryCall(this.value, parent);
     }
 }
@@ -125,12 +144,13 @@ genreCategoryCall("animation", firstCategory);
 genreCategoryCall("mystery", secondCategory);
 genreCategoryCall("fantasy", thirdCategory);
 
-allGenresListCall(forthCategory);
-allGenresListCall(fifthCategory);
+allGenresListCall(forthCategory, "forth");
+allGenresListCall(fifthCategory, "fifth");
 
 forthCategoryMenu.addEventListener("click", changeCategory);
 fifthCategoryMenu.addEventListener("click", changeCategory);
 // seeMoreForthCat.addEventListener("click", )
+// seeMoreFifthCat.addEventListener("click", )
 
 
 
