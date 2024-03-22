@@ -18,6 +18,7 @@ fetch(titlesUrl + "?sort_by=-imdb_score&page_size=1")
     const bestMovie = json.results[0];
     document.querySelector("#bestMoviePicture").style.cssText = "background-image: url(" + bestMovie.image_url + ")";
     document.querySelector("#bestMovieTitle").innerText = bestMovie.title;
+    document.querySelector(".bestMovieDetailButton").setAttribute("data-id",bestMovie.id);
 
     fetch(titlesUrl + json.results[0].id)
     .then((resp) => {
@@ -34,8 +35,16 @@ function unzipFigure(categoryBox, jsonResults)
     var figureCount = 0;
 
     allFigure.forEach(figure => {
-        figure.style.cssText = "background-image: url(" + jsonResults[figureCount].image_url + ")";
-        figure.querySelector("h4").innerText = jsonResults[figureCount].title;
+
+        if(figureCount < jsonResults.length){
+        
+            figure.style.cssText = "background-image: url(" + jsonResults[figureCount].image_url + ")";
+            figure.querySelector("h4").innerText = jsonResults[figureCount].title;
+            figure.querySelector(".movieDetailButton").setAttribute("data-id", jsonResults[figureCount].id)
+        }   
+        else{
+            figure.querySelector("div").style.cssText = "display: none"
+        }     
         figureCount += 1;
     });
 }
@@ -50,6 +59,7 @@ function genreCategoryCall(genre, categoryBox)
         const h2Element = categoryBox.querySelector("h2");
         // Upper case on the first letter of the genre in entry
         h2Element.innerText = genre.charAt(0).toUpperCase() + genre.slice(1);
+        
         unzipFigure(categoryBox, json.results);
     });
 };
@@ -64,9 +74,27 @@ function otherCategoryCall(genre, personalizedCategory)
     });
 };
 
-function allGenresListCall(personalizedCategory, element)
+function trackerUpdate(categoriesBox, selectedElement, elementLocation)
 {
-    fetch(genresCategoryUrl).then((response) => {
+    categoriesBox.value = selectedElement;
+
+            if(elementLocation == "forth"){
+                forthActiveGenre = selectedElement;
+            }
+            if(elementLocation == "fifth"){
+                fifthActiveGenre = selectedElement;
+            }
+
+            count += 1;
+            if(count == 2){
+                count = 0;
+            }       
+}
+
+function allGenresListCall(personalizedCategory, elementLocation)
+{
+    fetch(genresCategoryUrl)
+    .then((response) => {
         return response.json();
     })
     .then((json) => {
@@ -85,48 +113,62 @@ function allGenresListCall(personalizedCategory, element)
             };
 
             otherCategoryCall(json.results[count].name, personalizedCategory); 
-            selectedElement = json.results[count].name.charAt(0).toLowerCase() + json.results[count].name.slice(1)
-            categoriesBox.value = selectedElement;
-
-            if(element == "forth"){
-                forthActiveGenre = selectedElement;
-            }
-            if(element == "fifth"){
-                fifthActiveGenre = selectedElement;
-            }
-
-            count += 1;
-            if(count == 2){
-                count = 0;
-            }       
+            const selectedElement = json.results[count].name.charAt(0).toLowerCase() + json.results[count].name.slice(1)
+            trackerUpdate(categoriesBox, selectedElement, elementLocation)    
         });
     });
 };
 
-function changeCategory(event){
+function changeCategory(event)
+{
     event.preventDefault();
 
-    const parent = this.parentElement.parentElement; 
-    attribute = parseInt(this.getAttribute("data-id"));
-    this.setAttribute("data-id", attribute +1);
-
-    // if(parseInt(this.getAttribute("data-id") % 2) == 0)
-    // {
-    //     otherCategoryCall(this.value, parent);
-    // } 
-
-    if(parent == forthCategory && forthActiveGenre != this.value)
+    const greatParent = this.parentElement.parentElement; 
+    if(greatParent == forthCategory && forthActiveGenre != this.value)
     {
-        forthActiveGenre != this.value
-        otherCategoryCall(this.value, parent);
+        forthActiveGenre = this.value
+        otherCategoryCall(this.value, greatParent);
     }
 
-    if(parent == fifthCategory && fifthActiveGenre != this.value)
+    if(greatParent == fifthCategory && fifthActiveGenre != this.value)
     {
-        fifthActiveGenre != this.value
-        otherCategoryCall(this.value, parent);
+        fifthActiveGenre = this.value
+        otherCategoryCall(this.value, greatParent);
     }
 }
+
+
+
+function displayModal(event)
+{
+    event.preventDefault
+    fetch(titlesUrl + this.getAttribute("data-id"))
+    .then((response) => {
+        return response.json();
+    })
+    .then((json) => {
+        console.log(json)
+        var modal = document.querySelector("#detailWindow")
+        // modal.remove.child(modal.querySelector("div"))
+
+
+        var modalTitle = document.createElement("h5");
+        modalTitle.innerText = json.title;
+        var modalHeader = document.createElement("div");
+        modalHeader.appendChild(modalTitle);
+
+        var modalContent = document.createElement("div");
+
+        var modalBox = document.createElement("div");
+        modalBox.appendChild(modalHeader);
+        modalBox.appendChild(modalContent);
+        // modalHeader.addId("#modalHeader");
+
+        modal.appendChild(modalBox);
+
+        
+    });
+};
 
 const firstCategory = document.querySelector("#firstCategory");
 const secondCategory = document.querySelector("#secondCategory");
@@ -140,6 +182,8 @@ const fifthCategoryMenu = document.querySelector("#fifthCategory .categoryListBo
 const seeMoreForthCat = document.querySelector("#forthCategory  .seeMoreButton");
 const seeMoreFifthCat = document.querySelector("#fifthCategory  .seeMoreButton");
 
+const detailsButtons = document.querySelectorAll(".movieDetailButton")
+
 genreCategoryCall("animation", firstCategory);
 genreCategoryCall("mystery", secondCategory);
 genreCategoryCall("fantasy", thirdCategory);
@@ -151,6 +195,10 @@ forthCategoryMenu.addEventListener("click", changeCategory);
 fifthCategoryMenu.addEventListener("click", changeCategory);
 // seeMoreForthCat.addEventListener("click", )
 // seeMoreFifthCat.addEventListener("click", )
+
+detailsButtons.forEach(item => {
+    item.addEventListener("click", displayModal)
+});
 
 
 
