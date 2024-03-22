@@ -81,7 +81,6 @@ function allGenresListCall(personalizedCategory, displayIndex)
                 optionElement.innerText = genre.name;
                 if(displayIndex == count)
                 {
-                    console.log(displayIndex)
                     optionElement.classList.add("otherCategoryShow")
                 }
                 categoriesBox.appendChild(optionElement);
@@ -97,11 +96,30 @@ function allGenresListCall(personalizedCategory, displayIndex)
     });
 };
 
+function changeCategory(event){
+    event.preventDefault();
+
+    const parent = this.parentElement.parentElement; 
+    attribute = parseInt(this.getAttribute("data-id"));
+    this.setAttribute("data-id", attribute +1);
+
+    if(parseInt(this.getAttribute("data-id") % 2) == 0)
+    {
+        otherCategoryCall(this.value, parent);
+    }
+}
+
 const firstCategory = document.querySelector("#firstCategory");
 const secondCategory = document.querySelector("#secondCategory");
 const thirdCategory = document.querySelector("#thirdCategory");
 const forthCategory = document.querySelector("#forthCategory");
 const fifthCategory = document.querySelector("#fifthCategory");
+
+const forthCategoryMenu = document.querySelector("#forthCategory .categoryListBox");
+const fifthCategoryMenu = document.querySelector("#fifthCategory .categoryListBox");
+
+const seeMoreForthCat = document.querySelector("#forthCategory  .seeMoreButton");
+const seeMoreFifthCat = document.querySelector("#fifthCategory  .seeMoreButton");
 
 genreCategoryCall("animation", firstCategory);
 genreCategoryCall("mystery", secondCategory);
@@ -110,7 +128,9 @@ genreCategoryCall("fantasy", thirdCategory);
 allGenresListCall(forthCategory, firstOther);
 allGenresListCall(fifthCategory, secondOther);
 
-
+forthCategoryMenu.addEventListener("click", changeCategory);
+fifthCategoryMenu.addEventListener("click", changeCategory);
+// seeMoreForthCat.addEventListener("click", )
 
 
 

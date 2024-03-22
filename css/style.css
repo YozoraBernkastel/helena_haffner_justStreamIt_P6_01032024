@@ -34,7 +34,7 @@ article{
         margin-top: 20px;
 }
 
-h4, ul, p{
+h4, p{
         padding: 0;
         margin: 0;
 }
@@ -62,7 +62,6 @@ header img{
         width: 127px;        
         margin-top: 15px;
 }
-
 
 h1{
         color: #fff;
@@ -163,7 +162,6 @@ h4{
         padding-left: 30px;
 }
 
-
 .movieDetailButton{
         opacity: 1;
         width: 80px;
@@ -193,25 +191,19 @@ h4{
         margin-bottom: 10px;
 }
 
-.categoryList{
-        padding-top: 42px;
-        width: 70%;
+.categoryListBox{
+        margin-top: 40px;
+        width: 60%;
         font-size: 36px;
         margin-left: 20px;
+        height: 60px;
+        background-color: #fff;  
 }
 
-.categoryList option{
-        /* display: none; */
+.categoryListBox option{
         text-align: left;
         padding-left: 20px;
         padding-top: 5px;
-}
-
-.categoryList>.otherCategoryShow{
-        display: block;
-        border: solid 2px #000;
-        width: 80%;
-        height: 60px;        
 }
 
 .triangle{
@@ -272,25 +264,13 @@ h4{
                 padding-top: 10px;
         }
 
-        ul{
+        .categoryListBox{
                 margin-top: 10px;
-        }
-
-        .categoryList{
                 font-size: 1.5rem;
-                padding-top: 10px;
         }
 
         .triangle{
                 width: 20px;
-        }
-
-        .categoryList li{
-                padding-top: 10px;
-        }
-
-        .categoryList>.otherCategoryShow{
-               height: 40px;
         }
 }
 
@@ -343,12 +323,14 @@ h4{
                 display: none;
         }
 
-        .categoryList{
-                width: 100%;
+        .categoryListBox{
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
         }
 
-        .categoryList>.otherCategoryShow{
+        /* .categoryList>.otherCategoryShow{
                 width: 90%;
-        }
+        } */
 
 }
