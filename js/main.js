@@ -5,6 +5,9 @@ const pageSize = 6;
 const firstOther = 0;
 const secondOther = 1;
 
+var forthActiveGenre = "";
+var fifthActiveGenre = "";
+
 var count = 0;
 
 fetch(titlesUrl + "?sort_by=-imdb_score&page_size=1")
@@ -61,32 +64,28 @@ function otherCategoryCall(genre, personalizedCategory)
     });
 };
 
-function allGenresListCall(personalizedCategory, displayIndex)
+function allGenresListCall(personalizedCategory)
 {
     fetch(genresCategoryUrl).then((response) => {
         return response.json();
     })
     .then((json) => {
-
         fetch(genresCategoryUrl + "?page_size=" + json.count)
         .then((resp) => {
             return resp.json();            
         })
         .then((json) => {
-            categoriesBox = personalizedCategory.querySelector(".categoryListBox");
+            const categoriesBox = personalizedCategory.querySelector(".categoryListBox");
 
             for(genre of json.results){
                 optionElement = document.createElement("option")
                 optionElement.value = genre.name.charAt(0).toLowerCase() + genre.name.slice(1);
                 optionElement.innerText = genre.name;
-                if(displayIndex == count)
-                {
-                    optionElement.classList.add("otherCategoryShow")
-                }
                 categoriesBox.appendChild(optionElement);
             };
 
-            otherCategoryCall(json.results[count].name, personalizedCategory);  
+            otherCategoryCall(json.results[count].name, personalizedCategory); 
+            categoriesBox.value = json.results[count].name.charAt(0).toLowerCase() + json.results[count].name.slice(1);
             count += 1;
 
             if(count == 2){
@@ -102,6 +101,7 @@ function changeCategory(event){
     const parent = this.parentElement.parentElement; 
     attribute = parseInt(this.getAttribute("data-id"));
     this.setAttribute("data-id", attribute +1);
+    console.log(this.value)
 
     if(parseInt(this.getAttribute("data-id") % 2) == 0)
     {
@@ -125,8 +125,8 @@ genreCategoryCall("animation", firstCategory);
 genreCategoryCall("mystery", secondCategory);
 genreCategoryCall("fantasy", thirdCategory);
 
-allGenresListCall(forthCategory, firstOther);
-allGenresListCall(fifthCategory, secondOther);
+allGenresListCall(forthCategory);
+allGenresListCall(fifthCategory);
 
 forthCategoryMenu.addEventListener("click", changeCategory);
 fifthCategoryMenu.addEventListener("click", changeCategory);
