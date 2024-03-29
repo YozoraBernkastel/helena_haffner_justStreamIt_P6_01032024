@@ -18,7 +18,7 @@ fetch(titlesUrl + "?sort_by=-imdb_score&page_size=1")
     const bestMovie = json.results[0];
     document.querySelector("#bestMoviePicture").style.cssText = "background-image: url(" + bestMovie.image_url + ")";
     document.querySelector("#bestMovieTitle").innerText = bestMovie.title;
-    document.querySelector(".bestMovieDetailButton").setAttribute("data-id",bestMovie.id);
+    document.querySelector("#bestMovieDetailButton").setAttribute("data-id",bestMovie.id);
 
     fetch(titlesUrl + json.results[0].id)
     .then((resp) => {
@@ -126,49 +126,16 @@ function changeCategory(event)
     const greatParent = this.parentElement.parentElement; 
     if(greatParent == forthCategory && forthActiveGenre != this.value)
     {
-        forthActiveGenre = this.value
+        forthActiveGenre = this.value;
         otherCategoryCall(this.value, greatParent);
     }
 
     if(greatParent == fifthCategory && fifthActiveGenre != this.value)
     {
-        fifthActiveGenre = this.value
+        fifthActiveGenre = this.value;
         otherCategoryCall(this.value, greatParent);
     }
 }
-
-
-
-function displayModal(event)
-{
-    event.preventDefault
-    fetch(titlesUrl + this.getAttribute("data-id"))
-    .then((response) => {
-        return response.json();
-    })
-    .then((json) => {
-        console.log(json)
-        var modal = document.querySelector("#detailWindow")
-        // modal.remove.child(modal.querySelector("div"))
-
-
-        var modalTitle = document.createElement("h5");
-        modalTitle.innerText = json.title;
-        var modalHeader = document.createElement("div");
-        modalHeader.appendChild(modalTitle);
-
-        var modalContent = document.createElement("div");
-
-        var modalBox = document.createElement("div");
-        modalBox.appendChild(modalHeader);
-        modalBox.appendChild(modalContent);
-        // modalHeader.addId("#modalHeader");
-
-        modal.appendChild(modalBox);
-
-        
-    });
-};
 
 const firstCategory = document.querySelector("#firstCategory");
 const secondCategory = document.querySelector("#secondCategory");
@@ -182,8 +149,6 @@ const fifthCategoryMenu = document.querySelector("#fifthCategory .categoryListBo
 const seeMoreForthCat = document.querySelector("#forthCategory  .seeMoreButton");
 const seeMoreFifthCat = document.querySelector("#fifthCategory  .seeMoreButton");
 
-const detailsButtons = document.querySelectorAll(".movieDetailButton")
-
 genreCategoryCall("animation", firstCategory);
 genreCategoryCall("mystery", secondCategory);
 genreCategoryCall("fantasy", thirdCategory);
@@ -195,10 +160,4 @@ forthCategoryMenu.addEventListener("click", changeCategory);
 fifthCategoryMenu.addEventListener("click", changeCategory);
 // seeMoreForthCat.addEventListener("click", )
 // seeMoreFifthCat.addEventListener("click", )
-
-detailsButtons.forEach(item => {
-    item.addEventListener("click", displayModal)
-});
-
-
 
