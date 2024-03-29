@@ -34,13 +34,9 @@ article{
         margin-top: 20px;
 }
 
-h4, ul, li, p{
+h4, p{
         padding: 0;
         margin: 0;
-}
-
-li{
-	list-style: none;
 }
 
 footer{
@@ -56,7 +52,6 @@ header{
         border: solid 1px #000;
         margin-top: 50px;
         display: flex;
-
 }
 
 header span{
@@ -68,7 +63,6 @@ header img{
         margin-top: 15px;
 }
 
-
 h1{
         color: #fff;
         font-size: 60px;
@@ -76,12 +70,12 @@ h1{
         font-weight: 300;
         margin-top: 25px;
         margin-bottom: 40px;
-        width: 55%;      
+        width: 70%;      
 }
 
 /* Main */
 /* best movie section */
-#detailWindow{
+#modal{
         display: none;
 }
 
@@ -111,12 +105,21 @@ h1{
         font-size: 28px;
 }
 
+#bestMoviePitch h3{
+        margin-top: 0;
+}
 
-.bestMovieDetailButton{
+#bestMovieDescription{
+        text-align: left;
+        margin-bottom: 10px;
+        min-height: 190px;
+}
+
+#bestMovieDetailButton, div>.closeButton{
         color: #fff;
         width: 158px;
-        height: 64px;
-        font-size: 24;
+        height: 50px;
+        font-size: 24px;
         font-weight: 500;
         background-color: #FA0B0B;
         border-radius: 25px;
@@ -153,11 +156,11 @@ h1{
 }
 
 h4{
+        height: 55px;
         font-size: 20px;
         text-align: left;
         padding-left: 30px;
 }
-
 
 .movieDetailButton{
         opacity: 1;
@@ -168,10 +171,11 @@ h4{
         margin-left: auto;
         margin-right: 15px;
         padding-top: 10px;
-        margin-top: 25px;
+        margin-top: 0px;
 }
 
 .movieDetailButton:hover{
+        cursor: pointer;
         transform: scale(1.1);
 	transition-duration: 0.5s;
 }
@@ -188,25 +192,19 @@ h4{
         margin-bottom: 10px;
 }
 
-.categoryList{
-        padding-top: 42px;
-        width: 70%;
+.categoryListBox{
+        margin-top: 40px;
+        width: 60%;
         font-size: 36px;
         margin-left: 20px;
+        height: 60px;
+        background-color: #fff;  
 }
 
-.categoryList li{
-        display: none;
+.categoryListBox option{
         text-align: left;
         padding-left: 20px;
         padding-top: 5px;
-}
-
-.categoryList>.otherCategoryShow{
-        display: block;
-        border: solid 2px #000;
-        width: 80%;
-        height: 60px;        
 }
 
 .triangle{
@@ -234,7 +232,7 @@ h4{
                 font-size: 2rem;
         }
 
-        .bestMovieDetailButton{
+        #bestMovieDetailButton, div>.closeButton{
                 width: 120px;
                 height: 35px;
                 font-size: 20px;
@@ -267,25 +265,13 @@ h4{
                 padding-top: 10px;
         }
 
-        ul{
+        .categoryListBox{
                 margin-top: 10px;
-        }
-
-        .categoryList{
                 font-size: 1.5rem;
-                padding-top: 10px;
         }
 
         .triangle{
                 width: 20px;
-        }
-
-        .categoryList li{
-                padding-top: 10px;
-        }
-
-        .categoryList>.otherCategoryShow{
-               height: 40px;
         }
 }
 
@@ -338,12 +324,9 @@ h4{
                 display: none;
         }
 
-        .categoryList{
-                width: 100%;
-        }
-
-        .categoryList>.otherCategoryShow{
+        .categoryListBox{
                 width: 90%;
+                margin-left: auto;
+                margin-right: auto;
         }
-
 }
