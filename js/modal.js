@@ -59,6 +59,7 @@ function createModalHeader(json){
     const headerInfo = insertChildrenElements(childrenList);
 
     const poster = createPosterFigure(json);
+    poster.classList.add("modalPicture");
 
     return insertChildrenElements([headerInfo, poster]);
 }
@@ -71,8 +72,10 @@ function createModalBody(json)
     const actors = initElement(formatList(json.actors));
 
     var returnButton = initElement("Fermer", "div");
-    returnButton.classList.add("closeButton");
+    returnButton.setAttribute("id","closeButton");
     returnButton.classList.add("movieDetailButton");
+    closeModalButton = returnButton;
+    closeModalButton.addEventListener("click", closeModal);
 
     const childrenList = [pitch, poster, withTitle, actors, returnButton]
 
@@ -81,28 +84,32 @@ function createModalBody(json)
 
 function displayModal(event)
 {
-    event.preventDefault
+    event.preventDefault;
     fetch(titlesUrl + this.getAttribute("data-id"))
     .then((response) => {
         return response.json();
     })
     .then((json) => {
-        console.log(json.id);
-        console.log(json.genres);
         var modal = document.querySelector("#modal");
         modal.removeChild(modal.querySelector("div"));
+        modal.style.cssText = "display : block";
 
         const modalHeader = createModalHeader(json);
+        modalHeader.setAttribute("id", "modalHeader");
         const modalBody = createModalBody(json);
-
-        var modalBox = document.createElement("div");
-        modalBox.appendChild(modalHeader);
-        modalBox.appendChild(modalBody);
-        // modalHeader.addId("#modalHeader");
+        modalBody.setAttribute("id", "modalBody");
+        var modalBox = insertChildrenElements([modalHeader, modalBody]);
 
         modal.appendChild(modalBox);
     });
 };
+
+function closeModal(event)
+{
+    event.preventDefault
+    var modal = document.querySelector("#modal");
+    modal.style.cssText = "display : none";
+}
 
 const detailsButtons = document.querySelectorAll(".movieDetailButton");
 

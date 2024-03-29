@@ -43,7 +43,8 @@ function unzipFigure(categoryBox, jsonResults)
             figure.querySelector(".movieDetailButton").setAttribute("data-id", jsonResults[figureCount].id)
         }   
         else{
-            figure.querySelector("div").style.cssText = "display: none"
+            figure.querySelector("div").style.cssText = "display: none";
+            figure.style.cssText = "background-image: none";
         }     
         figureCount += 1;
     });
