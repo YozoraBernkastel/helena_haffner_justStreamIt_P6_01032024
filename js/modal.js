@@ -52,7 +52,7 @@ function createModalHeader(json){
     const pgAndDuration = initElement(pgAndDurationContent);
 
     const score = initElement("IMDB score: " + json.imdb_score + "/10");    
-    const directorsTitle = initElement("Réalisé par :");
+    const directorsTitle = initElement("Réalisé par : ");
     const directors = initElement(formatList(json.directors));
 
     const childrenList = [modalTitle, dateAndGenre, pgAndDuration, score, directorsTitle, directors];
@@ -67,15 +67,17 @@ function createModalHeader(json){
 function createModalBody(json)
 {
     const pitch = initElement(json.long_description);
+
     const poster = createPosterFigure(json);
+    poster.classList.add("modalTabPicture");
+
     const withTitle = initElement("Avec:");
     const actors = initElement(formatList(json.actors));
 
-    var returnButton = initElement("Fermer", "div");
+    const returnButton = initElement("Fermer", "div");
     returnButton.setAttribute("id","closeButton");
     returnButton.classList.add("movieDetailButton");
-    closeModalButton = returnButton;
-    closeModalButton.addEventListener("click", closeModal);
+    returnButton.addEventListener("click", closeModal);
 
     const childrenList = [pitch, poster, withTitle, actors, returnButton]
 
@@ -94,11 +96,15 @@ function displayModal(event)
         modal.removeChild(modal.querySelector("div"));
         modal.style.cssText = "display : block";
 
+        const closeTabButton = initElement("X","div");
+        closeTabButton.setAttribute("id", "closeTab");
+        closeTabButton.addEventListener("click", closeModal);
+
         const modalHeader = createModalHeader(json);
         modalHeader.setAttribute("id", "modalHeader");
         const modalBody = createModalBody(json);
         modalBody.setAttribute("id", "modalBody");
-        var modalBox = insertChildrenElements([modalHeader, modalBody]);
+        var modalBox = insertChildrenElements([closeTabButton, modalHeader, modalBody]);
 
         modal.appendChild(modalBox);
     });

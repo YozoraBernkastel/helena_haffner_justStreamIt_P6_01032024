@@ -1,0 +1,103 @@
+/*téléphone portable*/
+@media screen and (max-width: 768px){ 
+    header{
+            display: block;
+    }
+    h1{
+            display: none;
+    }     
+
+    h2, h3{
+         text-align: center;   
+    }
+
+    #bestMovieArticle{
+            display:block;
+    }
+
+    #bestMoviePicture{
+            min-width: 90%;
+            min-height: 300px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+    }
+
+    #bestMoviePitch{
+            width: 95%;
+    }
+
+    #bestMoviePitch p{
+            margin-bottom: 15px;
+    }
+
+    .bestMovieDetailButton{
+            margin-right: auto;
+    }
+
+    .cadre{
+            width: 90%;
+    }
+
+    .cadre:nth-child(n + 3){
+            display: none;
+    }
+
+    .displayPersonalizedCategory h2{
+            display: none;
+    }
+
+    .categoryListBox{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+    }
+
+    #modal{
+            padding: 0;
+    }
+
+    #closeTab{
+            font-size: 1.2rem;
+    }
+
+    #modal>div{
+            width: 96%;
+            min-height: 1050px;
+            margin: 0;
+            border: none;
+            overflow:auto
+    }
+
+    #modal h5{
+            font-size: 1.5rem;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 5px;
+    }
+
+    #modal #modalHeader p{
+            font-size: 1rem;
+    }
+
+    #modalHeader p:nth-child(n+5){
+            display: inline-block;
+    }
+
+    #modalBody p{
+            font-size: 1rem;
+            width: 100%;
+    }
+
+    .modalTabPicture{
+            height: 250px;
+    }
+
+    .showAll .categoryContentBox{
+        height: 2160px
+    }
+
+    .showAll .cadre{
+        display: block;
+    }
+}

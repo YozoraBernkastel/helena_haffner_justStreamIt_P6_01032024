@@ -45,6 +45,7 @@ function unzipFigure(categoryBox, jsonResults)
         else{
             figure.querySelector("div").style.cssText = "display: none";
             figure.style.cssText = "background-image: none";
+            figure.classList.add("endOfList");
         }     
         figureCount += 1;
     });
@@ -79,17 +80,18 @@ function trackerUpdate(categoriesBox, selectedElement, elementLocation)
 {
     categoriesBox.value = selectedElement;
 
-            if(elementLocation == "forth"){
-                forthActiveGenre = selectedElement;
-            }
-            if(elementLocation == "fifth"){
-                fifthActiveGenre = selectedElement;
-            }
+    if(elementLocation == "forth"){
+         forthActiveGenre = selectedElement;
+    }
 
-            count += 1;
-            if(count == 2){
-                count = 0;
-            }       
+    if(elementLocation == "fifth"){
+        fifthActiveGenre = selectedElement;
+    }
+
+    count += 1;
+    if(count == 2){
+        count = 0;
+    }       
 }
 
 function allGenresListCall(personalizedCategory, elementLocation)
@@ -124,7 +126,8 @@ function changeCategory(event)
 {
     event.preventDefault();
 
-    const greatParent = this.parentElement.parentElement; 
+    const greatParent = this.parentElement.parentElement;
+
     if(greatParent == forthCategory && forthActiveGenre != this.value)
     {
         forthActiveGenre = this.value;
@@ -138,6 +141,30 @@ function changeCategory(event)
     }
 }
 
+function toggleSeeMore(event)
+{
+    event.preventDefault();
+
+    const parent = this.parentElement;
+    const cadres = parent.querySelectorAll(".cadre");
+    const lastCadre = cadres[cadres.length - 1];
+
+    if (lastCadre.classList.contains("endOfList"))
+    {
+        return;
+    }
+
+    parent.classList.toggle("showAll");
+
+    if(this.innerText == "Voir plus")
+    {
+        this.innerText = "Voir moins";
+    }
+    else{
+        this.innerText = "Voir plus";
+    }
+}
+
 const firstCategory = document.querySelector("#firstCategory");
 const secondCategory = document.querySelector("#secondCategory");
 const thirdCategory = document.querySelector("#thirdCategory");
@@ -147,8 +174,7 @@ const fifthCategory = document.querySelector("#fifthCategory");
 const forthCategoryMenu = document.querySelector("#forthCategory .categoryListBox");
 const fifthCategoryMenu = document.querySelector("#fifthCategory .categoryListBox");
 
-const seeMoreForthCat = document.querySelector("#forthCategory  .seeMoreButton");
-const seeMoreFifthCat = document.querySelector("#fifthCategory  .seeMoreButton");
+const seeMoreButtons = document.querySelectorAll(".seeMoreButton");
 
 genreCategoryCall("animation", firstCategory);
 genreCategoryCall("mystery", secondCategory);
@@ -159,6 +185,8 @@ allGenresListCall(fifthCategory, "fifth");
 
 forthCategoryMenu.addEventListener("click", changeCategory);
 fifthCategoryMenu.addEventListener("click", changeCategory);
-// seeMoreForthCat.addEventListener("click", )
-// seeMoreFifthCat.addEventListener("click", )
+
+seeMoreButtons.forEach(item => {
+    item.addEventListener("click", toggleSeeMore)
+});
 

@@ -203,25 +203,31 @@ h4{
         padding-top: 5px;
 }
 
-.triangle{
-        margin-left: 80px;
-}
-
 /*Modal*/
 #modal{
         display: none;
-        position: sticky;
+        position: fixed;
         top: 0px; 
         left: 0px;
         background-color: #fff;
         width: 100%;
         min-height: 950px;
         text-align: left;
-
+        padding: 1px;
 }
 
 #modal>div{
         width: 80%;
+        border: solid 4px black;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+}
+
+#closeTab{
+        display: none;
 }
 
 #modalHeader, #modalBody{
@@ -233,7 +239,8 @@ h4{
 
 #modalHeader{
         display: flex;
-        justify-content: space-around;      
+        justify-content: space-around; 
+        padding-top: 10px;   
 }
 
 #modal h5{
@@ -273,123 +280,4 @@ h4{
         margin-right: auto;
         margin-top: 50px;
         text-align: center;
-}
-
-/*tablette*/
-@media screen and (max-width: 992px){
-
-        header, section{
-                width: 100%;
-        }
-
-        #bestMoviePicture{
-                width: 32%;
-                margin: 0;
-        }
-
-        #bestMoviePitch{
-                width: 63%;
-        }
-
-        h2, h3{
-                font-size: 2rem;
-        }
-
-        #bestMovieDetailButton, #closeButton{
-                width: 120px;
-                height: 35px;
-                font-size: 20px;
-                padding-top: 10px; 
-        }
-
-        .seeMoreButton{
-                display: inline-block;
-        }
-
-        .categoryContentBox{
-                justify-content: space-around;
-                margin-bottom: 50px;
-        }
-
-        .cadre{
-                width: 47%;
-        }
-
-        .cadre:nth-child(n + 5){
-                display: none;
-        }
-
-        .seeMoreButton{
-                background-color: orangered;
-                color: #fff;
-                width: 150px;
-                height: 30px;
-                border-radius: 25px;
-                padding-top: 10px;
-        }
-
-        .categoryListBox{
-                margin-top: 10px;
-                font-size: 1.5rem;
-        }
-
-        .triangle{
-                width: 20px;
-        }
-}
-
-/*téléphone portable*/
-@media screen and (max-width: 768px){ 
-        header{
-                display: block;
-        }
-        h1{
-                display: none;
-        }     
-
-        h2, h3{
-             text-align: center;   
-        }
-
-        #bestMovieArticle{
-                display:block;
-        }
-
-        #bestMoviePicture{
-                min-width: 90%;
-                min-height: 300px;
-                margin-top: 10px;
-                margin-left: auto;
-                margin-right: auto;
-        }
-
-        #bestMoviePitch{
-                width: 95%;
-        }
-
-        #bestMoviePitch p{
-                margin-bottom: 15px;
-        }
-
-        .bestMovieDetailButton{
-                margin-right: auto;
-        }
-
-        .cadre{
-                width: 90%;
-        }
-
-        .cadre:nth-child(n + 3){
-                display: none;
-        }
-
-        .displayPersonalizedCategory h2{
-                display: none;
-        }
-
-        .categoryListBox{
-                width: 90%;
-                margin-left: auto;
-                margin-right: auto;
-        }
 }
