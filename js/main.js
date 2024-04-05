@@ -41,6 +41,11 @@ function unzipFigure(categoryBox, jsonResults)
             figure.style.cssText = "background-image: url(" + jsonResults[figureCount].image_url + ")";
             figure.querySelector("h4").innerText = jsonResults[figureCount].title;
             figure.querySelector(".movieDetailButton").setAttribute("data-id", jsonResults[figureCount].id)
+
+            if(figure.classList.contains("endOfList"))
+           {
+                figure.classList.remove("endOfList");
+           }
         }   
         else{
             figure.querySelector("div").style.cssText = "display: none";
@@ -149,7 +154,7 @@ function toggleSeeMore(event)
     const cadres = parent.querySelectorAll(".cadre");
     const lastCadre = cadres[cadres.length - 1];
 
-    if (lastCadre.classList.contains("endOfList"))
+    if (lastCadre.classList.contains("endOfList") &&  !parent.classList.contains("showAll"))
     {
         return;
     }
