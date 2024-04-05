@@ -184,7 +184,6 @@ h4{
 .otherCategoryTitleBox{
         width: 100%;
         display: flex;
-        justify-content: baseline;
         margin-bottom: 10px;
 }
 
