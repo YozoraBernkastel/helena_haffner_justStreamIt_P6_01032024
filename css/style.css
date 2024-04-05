@@ -75,10 +75,6 @@ h1{
 
 /* Main */
 /* best movie section */
-#modal{
-        display: none;
-}
-
 #bestMovieArticle{
         min-height: 369px;
         border: solid 6px #000;
@@ -115,17 +111,17 @@ h1{
         min-height: 190px;
 }
 
-#bestMovieDetailButton, div>.closeButton{
+#bestMovieDetailButton, #closeButton{
         color: #fff;
         width: 158px;
-        height: 50px;
+        height: 40px;
         font-size: 24px;
         font-weight: 500;
         background-color: #FA0B0B;
         border-radius: 25px;
-        padding-top: 25px;
+        padding-top: 10px;
         margin-left: auto;
-        margin-right: 10px;
+        margin-right: 15px;
 }
 
 /* Fixed Categories section */
@@ -207,126 +203,81 @@ h4{
         padding-top: 5px;
 }
 
-.triangle{
-        margin-left: 80px;
+/*Modal*/
+#modal{
+        display: none;
+        position: fixed;
+        top: 0px; 
+        left: 0px;
+        background-color: #fff;
+        width: 100%;
+        min-height: 950px;
+        text-align: left;
+        padding: 1px;
 }
 
-
-/*tablette*/
-@media screen and (max-width: 992px){
-
-        header, section{
-                width: 100%;
-        }
-
-        #bestMoviePicture{
-                width: 32%;
-                margin: 0;
-        }
-
-        #bestMoviePitch{
-                width: 63%;
-        }
-
-        h2, h3{
-                font-size: 2rem;
-        }
-
-        #bestMovieDetailButton, div>.closeButton{
-                width: 120px;
-                height: 35px;
-                font-size: 20px;
-                padding-top: 10px; 
-        }
-
-        .seeMoreButton{
-                display: inline-block;
-        }
-
-        .categoryContentBox{
-                justify-content: space-around;
-                margin-bottom: 50px;
-        }
-
-        .cadre{
-                width: 47%;
-        }
-
-        .cadre:nth-child(n + 5){
-                display: none;
-        }
-
-        .seeMoreButton{
-                background-color: orangered;
-                color: #fff;
-                width: 150px;
-                height: 30px;
-                border-radius: 25px;
-                padding-top: 10px;
-        }
-
-        .categoryListBox{
-                margin-top: 10px;
-                font-size: 1.5rem;
-        }
-
-        .triangle{
-                width: 20px;
-        }
+#modal>div{
+        width: 80%;
+        border: solid 4px black;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
 }
 
-/*téléphone portable*/
-@media screen and (max-width: 768px){ 
-        header{
-                display: block;
-        }
-        h1{
-                display: none;
-        }     
+#closeTab{
+        display: none;
+}
 
-        h2, h3{
-             text-align: center;   
-        }
+#modalHeader, #modalBody{
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 100px;
+}
 
-        #bestMovieArticle{
-                display:block;
-        }
+#modalHeader{
+        display: flex;
+        justify-content: space-around; 
+        padding-top: 10px;   
+}
 
-        #bestMoviePicture{
-                min-width: 90%;
-                min-height: 300px;
-                margin-top: 10px;
-                margin-left: auto;
-                margin-right: auto;
-        }
+#modal h5{
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 20px;
+}
 
-        #bestMoviePitch{
-                width: 95%;
-        }
+#modalHeader p{
+        font-weight: bold;
+        font-size: 20px;
+}
 
-        #bestMoviePitch p{
-                margin-bottom: 15px;
-        }
+#modalHeader p:nth-child(5){
+        margin-top: 50px;
+}
 
-        .bestMovieDetailButton{
-                margin-right: auto;
-        }
+.modalPicture{
+        width: 40%; 
+        height: 460px;
+        margin-top: auto;
+        margin-bottom: auto;
+        box-sizing: content-box;
+        background-size: cover;
+	background-position: center;
+}
+#modalBody p{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+}
 
-        .cadre{
-                width: 90%;
-        }
-
-        .cadre:nth-child(n + 3){
-                display: none;
-        }
-
-        .displayPersonalizedCategory h2{
-                display: none;
-        }
-
-        .categoryListBox{
-                width: 90%;
-                margin-left: auto;
-                margin-right: auto;
-        }
+#closeButton{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        text-align: center;
 }
