@@ -1,6 +1,7 @@
-const titlesUrl = "http://localhost:8000/api/v1/titles/";
-const genresUrl = "http://localhost:8000/api/v1/titles/?genre=";
-const genresCategoryUrl = "http://localhost:8000/api/v1/genres/";
+const url = "http://localhost:8000/api/v1/"
+const titlesUrl = url + "titles/";
+const genresUrl = titlesUrl + "?genre=";
+const genresCategoryUrl = url + "genres/";
 const pageSize = 6;
 const firstOther = 0;
 const secondOther = 1;
