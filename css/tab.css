@@ -1,112 +1,112 @@
 /*tablette*/
 @media screen and (max-width: 992px){
 
-    header, section{
-            width: 100%;
-    }
+        header, section{
+                width: 100%;
+        }
 
-    #bestMoviePicture{
-            width: 32%;
-            margin: 0;
-    }
+        #bestMoviePicture{
+                width: 32%;
+                margin: 0;
+        }
 
-    #bestMoviePitch{
-            width: 63%;
-    }
+        #bestMoviePitch{
+                width: 63%;
+        }
 
-    h2, h3{
-            font-size: 2rem;
-    }
+        h2, h3{
+                font-size: 2rem;
+        }
 
-    #bestMovieDetailButton, #closeButton{
-            width: 120px;
-            height: 35px;
-            font-size: 20px;
-            padding-top: 10px; 
-    }
+        #bestMovieDetailButton, #closeButton{
+                width: 120px;
+                height: 35px;
+                font-size: 20px;
+                padding-top: 10px; 
+        }
 
-    .seeMoreButton{
-            display: inline-block;
-    }
+        .seeMoreButton{
+                display: inline-block;
+        }
 
-    .categoryContentBox{
-            justify-content: space-around;
-            margin-bottom: 50px;
-    }
+        .categoryContentBox{
+                justify-content: space-around;
+                margin-bottom: 50px;
+        }
 
-    .cadre{
-            width: 47%;
-    }
+        .cadre{
+                width: 47%;
+        }
 
-    .cadre:nth-child(n + 5){
-            display: none;
-    }
+        .cadre:nth-child(n + 5){
+                display: none;
+        }
 
-    .seeMoreButton{
-            background-color: orangered;
-            color: #fff;
-            width: 150px;
-            height: 30px;
-            border-radius: 25px;
-            padding-top: 10px;
-    }
+        .seeMoreButton{
+                background-color: orangered;
+                color: #fff;
+                width: 150px;
+                height: 30px;
+                border-radius: 25px;
+                padding-top: 10px;
+        }
 
-    .categoryListBox{
-            margin-top: 10px;
-            font-size: 1.5rem;
-    }
+        .categoryListBox{
+                margin-top: 10px;
+                font-size: 1.5rem;
+        }
 
-    #modal{
-          text-align: center;
-    }
+        #modal{
+                text-align: center;
+        }
 
-    #modal>div{
-            width: 90%;
-            min-height: 1050px;
-    }
+        #modal>div{
+                width: 90%;
+                min-height: 1050px;
+        }
 
-    #closeTab{
-            display: block;
-            width: 20px;
-            font-size: 2rem;
-            margin-left: auto;
-            color: orangered;
-            font-weight: 400;
-    }
+        #closeTab{
+                display: block;
+                width: 20px;
+                font-size: 2rem;
+                margin-left: auto;
+                color: orangered;
+                font-weight: 400;
+        }
 
-    .modalPicture{
-            display: none;
-    }
+        .modalPicture{
+                display: none;
+        }
 
-    #modalBody{
-            padding-top: 10px;
-            width: 100%;
-    }
+        #modalBody{
+                padding-top: 10px;
+                width: 100%;
+        }
 
-    #modalHeader p:nth-child(5){
-            margin-top: 10px;
-    }
+        #modalHeader p:nth-child(5){
+                margin-top: 10px;
+        }
 
-    .modalTabPicture{
-            display: inline-block;
-            width: 50%; 
-            height: 460px;
-            margin-left: auto;
-            margin-right: auto;
-            background-size: cover;
-            background-position: center;
-    }
+        .modalTabPicture{
+                display: inline-block;
+                width: 50%; 
+                height: 460px;
+                margin-left: auto;
+                margin-right: auto;
+                background-size: cover;
+                background-position: center;
+        }
 
-    #closeButton{
-            display: none;
-    }
+        #closeButton{
+                display: none;
+        }
 
-    .showAll .categoryContentBox{
-        height: 1050px
-    }
+        .showAll .categoryContentBox{
+                height: 1050px
+        }
 
-    .showAll .cadre{
-        display: block;
-    }
+        .showAll .cadre{
+                display: block;
+        }
 
 }

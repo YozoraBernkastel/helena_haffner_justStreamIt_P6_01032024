@@ -1,103 +1,105 @@
 /*téléphone portable*/
 @media screen and (max-width: 768px){ 
-    header{
-            display: block;
-    }
-    h1{
-            display: none;
-    }     
 
-    h2, h3{
-         text-align: center;   
-    }
+        header{
+                display: block;
+        }
 
-    #bestMovieArticle{
-            display:block;
-    }
+        h1{
+                display: none;
+        }     
 
-    #bestMoviePicture{
-            min-width: 90%;
-            min-height: 300px;
-            margin-top: 10px;
-            margin-left: auto;
-            margin-right: auto;
-    }
+        h2, h3{
+                text-align: center;   
+        }
 
-    #bestMoviePitch{
-            width: 95%;
-    }
+        #bestMovieArticle{
+                display:block;
+        }
 
-    #bestMoviePitch p{
-            margin-bottom: 15px;
-    }
+        #bestMoviePicture{
+                min-width: 90%;
+                min-height: 300px;
+                margin-top: 10px;
+                margin-left: auto;
+                margin-right: auto;
+        }
 
-    .bestMovieDetailButton{
-            margin-right: auto;
-    }
+        #bestMoviePitch{
+                width: 95%;
+        }
 
-    .cadre{
-            width: 90%;
-    }
+        #bestMoviePitch p{
+                margin-bottom: 15px;
+        }
 
-    .cadre:nth-child(n + 3){
-            display: none;
-    }
+        .bestMovieDetailButton{
+                margin-right: auto;
+        }
 
-    .displayPersonalizedCategory h2{
-            display: none;
-    }
+        .cadre{
+                width: 90%;
+        }
 
-    .categoryListBox{
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-    }
+        .cadre:nth-child(n + 3){
+                display: none;
+        }
 
-    #modal{
-            padding: 0;
-    }
+        .displayPersonalizedCategory h2{
+                display: none;
+        }
 
-    #closeTab{
-            font-size: 1.2rem;
-    }
+        .categoryListBox{
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+        }
 
-    #modal>div{
-            width: 96%;
-            min-height: 1050px;
-            margin: 0;
-            border: none;
-            overflow:auto
-    }
+        #modal{
+                padding: 0;
+        }
 
-    #modal h5{
-            font-size: 1.5rem;
-            padding: 0;
-            margin-top: 0;
-            margin-bottom: 5px;
-    }
+        #closeTab{
+                font-size: 1.2rem;
+        }
 
-    #modal #modalHeader p{
-            font-size: 1rem;
-    }
+        #modal>div{
+                width: 96%;
+                min-height: 1050px;
+                margin: 0;
+                border: none;
+                overflow:auto
+        }
 
-    #modalHeader p:nth-child(n+5){
-            display: inline-block;
-    }
+        #modal h5{
+                font-size: 1.5rem;
+                padding: 0;
+                margin-top: 0;
+                margin-bottom: 5px;
+        }
 
-    #modalBody p{
-            font-size: 1rem;
-            width: 100%;
-    }
+        #modal #modalHeader p{
+                font-size: 1rem;
+        }
 
-    .modalTabPicture{
-            height: 250px;
-    }
+        #modalHeader p:nth-child(n+5){
+                display: inline-block;
+        }
 
-    .showAll .categoryContentBox{
-        height: 2160px
-    }
+        #modalBody p{
+                font-size: 1rem;
+                width: 100%;
+        }
 
-    .showAll .cadre{
-        display: block;
-    }
+        .modalTabPicture{
+                height: 250px;
+        }
+
+        .showAll .categoryContentBox{
+                height: 2160px
+        }
+
+        .showAll .cadre{
+                display: block;
+        }
 }
