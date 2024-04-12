@@ -46,6 +46,7 @@ function unzipFigure(categoryBox, jsonResults)
             if(figure.classList.contains("endOfList"))
            {
                 figure.classList.remove("endOfList");
+                figure.querySelector("div").style.cssText = "display: block";
            }
         }   
         else{
