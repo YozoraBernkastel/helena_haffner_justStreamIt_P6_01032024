@@ -20,15 +20,19 @@ section {
         width: 60%;
 }
 
-h1, h2, h3{
+h1, h2, h3, label{
         text-align: left;
 }
 
-h2, h3{
+h2, h3, label{
         font-size: 48px;
         font-weight: 600;
         padding: 0;
         margin-bottom: 30px;
+}
+
+label{
+        margin: 0;
 }
 article{
         margin-top: 20px;
@@ -151,11 +155,12 @@ h1{
         padding-bottom: 5px;
 }
 
-h4{
+figure h3{
         height: 55px;
         font-size: 20px;
         text-align: left;
         padding-left: 30px;
+        margin: 0;
 }
 
 .movieDetailButton{
@@ -168,12 +173,7 @@ h4{
         margin-right: 15px;
         padding-top: 10px;
         margin-top: 0px;
-}
-
-.movieDetailButton:hover{
         cursor: pointer;
-        transform: scale(1.1);
-	transition-duration: 0.5s;
 }
 
 .seeMoreButton{
@@ -200,6 +200,10 @@ h4{
         text-align: left;
         padding-left: 20px;
         padding-top: 5px;
+}
+
+label{
+        margin-top: 37px;
 }
 
 /*Modal*/

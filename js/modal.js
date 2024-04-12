@@ -107,6 +107,9 @@ function displayModal(event)
         var modalBox = insertChildrenElements([closeTabButton, modalHeader, modalBody]);
 
         modal.appendChild(modalBox);
+    })
+    .catch((error) => {
+        console.log(error)
     });
 };
 
