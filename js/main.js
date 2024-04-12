@@ -28,6 +28,9 @@ fetch(titlesUrl + "?sort_by=-imdb_score&page_size=1")
     .then((json) => {
         document.querySelector("#bestMovieDescription").innerText = json.description;
     });
+})
+.catch((error) => {
+    console.log(error)
 });
 
 function unzipFigure(categoryBox, jsonResults)
@@ -70,6 +73,9 @@ function genreCategoryCall(genre, categoryBox)
         h2Element.innerText = genre.charAt(0).toUpperCase() + genre.slice(1);
         
         unzipFigure(categoryBox, json.results);
+    })
+    .catch((error) => {
+        console.log(error)
     });
 };
 
@@ -80,6 +86,9 @@ function otherCategoryCall(genre, personalizedCategory)
         return response.json();
     }).then((json) => {
         unzipFigure(personalizedCategory, json.results);
+    })
+    .catch((error) => {
+        console.log(error)
     });
 };
 
@@ -125,7 +134,13 @@ function allGenresListCall(personalizedCategory, elementLocation)
             otherCategoryCall(json.results[count].name, personalizedCategory); 
             const selectedElement = json.results[count].name.charAt(0).toLowerCase() + json.results[count].name.slice(1)
             trackerUpdate(categoriesBox, selectedElement, elementLocation)    
+        })
+        .catch((error) => {
+            console.log(error)
         });
+    })
+    .catch((error) => {
+        console.log(error)
     });
 };
 
