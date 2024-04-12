@@ -14,7 +14,7 @@
                 width: 63%;
         }
 
-        h2, h3{
+        h2, h3, label{
                 font-size: 2rem;
         }
 
@@ -54,6 +54,14 @@
         .categoryListBox{
                 margin-top: 10px;
                 font-size: 1.5rem;
+        }
+
+        figure h3{
+                margin: 0;
+        }
+
+        label{
+                margin-top: 20px;
         }
 
         #modal{

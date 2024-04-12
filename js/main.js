@@ -43,7 +43,7 @@ function unzipFigure(categoryBox, jsonResults)
         if(figureCount < jsonResults.length){
         
             figure.style.cssText = "background-image: url(" + jsonResults[figureCount].image_url + ")";
-            figure.querySelector("h4").innerText = jsonResults[figureCount].title;
+            figure.querySelector("h3").innerText = jsonResults[figureCount].title;
             figure.querySelector(".movieDetailButton").setAttribute("data-id", jsonResults[figureCount].id)
 
             if(figure.classList.contains("endOfList"))
@@ -53,6 +53,7 @@ function unzipFigure(categoryBox, jsonResults)
            }
         }   
         else{
+            figure.querySelector("h3").innerText = ".";
             figure.querySelector("div").style.cssText = "display: none";
             figure.style.cssText = "background-image: none";
             figure.classList.add("endOfList");
